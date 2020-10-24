@@ -23,6 +23,7 @@ import {
   checkForStoredAccessToken,
   checkForStoredRefreshToken,
 } from "./Auth";
+import NoMatch from "./views/noMatch.js";
 import Header from "./components/Header/index";
 import Footer from "./components/Footer/index";
 
@@ -34,7 +35,7 @@ import { AddStaffMember } from "./views/addStaffMember";
 import UserContext from "./UserContext";
 import Tenant from "./views/Tenant";
 import ChangePassword from "./views/Settings/changePassword";
-import NoMatch from "./views/noMatch.js";
+
 var refreshTimeout;
 
 export class App extends React.Component {
@@ -182,7 +183,7 @@ export class App extends React.Component {
               <Route exact path='/terms' component={Terms} />
               <Route exact path='/privacypolicy' component={PrivacyPolicy} />
               <Route exact path='/forgot-password' component={ForgotPassword} />
-              <div className='main-container'>
+              
                 <PrivateRoute exact path='/' component={Dashboard} />
                 <PrivateRoute exact path='/dashboard' component={Dashboard} />
                 <PrivateRoute exact path='/home' component={Dashboard} />
@@ -204,8 +205,8 @@ export class App extends React.Component {
                 <PrivateRoute exact path='/settings' component={Settings} />
                 <PrivateRoute exact path='/changePassword' component={ChangePassword} />
                 <PrivateRoute exact path='/request-access/:id' component={RequestAccess} />
+                <Route path="*" component={NoMatch} />
               </div>
-              <Route path="*" component={NoMatch} />
             </Switch>
             {this.state.userSession.isAuthenticated
               && <Footer />}
