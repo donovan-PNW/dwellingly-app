@@ -23,7 +23,7 @@ import {
   checkForStoredAccessToken,
   checkForStoredRefreshToken,
 } from "./Auth";
-import NoMatch from "./views/noMatch.js";
+import {NoMatch} from "./views/noMatch.js";
 import Header from "./components/Header/index";
 import Footer from "./components/Footer/index";
 
@@ -183,7 +183,7 @@ export class App extends React.Component {
               <Route exact path='/terms' component={Terms} />
               <Route exact path='/privacypolicy' component={PrivacyPolicy} />
               <Route exact path='/forgot-password' component={ForgotPassword} />
-              
+              <div className='main-container'>
                 <PrivateRoute exact path='/' component={Dashboard} />
                 <PrivateRoute exact path='/dashboard' component={Dashboard} />
                 <PrivateRoute exact path='/home' component={Dashboard} />

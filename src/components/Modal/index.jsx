@@ -6,7 +6,7 @@ import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
 import Button from "../Button";
 import "./modal.scss";
 
-const Modal = ({
+export const Modal = ({
   titleText,
   contentText,
   hasButtons,

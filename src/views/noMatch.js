@@ -1,7 +1,7 @@
 import React from "react";
 import dwellinglylogo from "../assets/images/dwellingly_logo_white.png";
-import { Modal } from "../components/Modal";
-const NoMatch = () => {
+import { Modal } from "../components/Modal/index.jsx";
+export const NoMatch = () => {
 
   return (
     <div className-="no-match__container">
